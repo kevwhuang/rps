@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en-US" dir="ltr">
+
+<head>
+
+    <title>Rock Paper Scissors</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        * {
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: #444;
+        }
+
+        button {
+            border: 1px solid #000;
+            display: block;
+            margin: 2vh;
+            padding: 0.5rem;
+            width: 200px;
+        }
+
+        button:hover {
+            background-color: navy;
+        }
+
+        button:active {
+            background-color: crimson;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 5vw;
+            margin-top: 2vh;
+            padding-left: 5vw;
+        }
+
+        hr {
+            margin: 2vh 0;
+        }
+
+        select {
+            border: 1px solid #000;
+            display: block;
+            margin: 2vh;
+            padding: 0.5rem;
+            text-align: center;
+            width: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>A Really Bad Rock Paper Scissors Game</h1>
+
+    <hr>
+
+    <select id="hand1">
+        <option value="r">Rock</option>
+        <option value="p">Paper</option>
+        <option value="s">Scissor</option>
+    </select>
+
+    <select id="hand2">
+        <option value="r">Rock</option>
+        <option value="p">Paper</option>
+        <option value="s">Scissor</option>
+    </select>
+
+    <button onclick="rps()">SHOOT!</button>
+
+    <script>
+        function rps() {
+            const hand1 = document.getElementById('hand1').value;
+            const hand2 = document.getElementById('hand2').value;
+            console.log(`${hand1}`, `${hand2}`);
+
+            switch (true) {
+                case (hand1 == hand2):
+                    window.alert('TIE!');
+                    break;
+                case (hand1 == 'r'):
+                    if (hand2 == 'p') {
+                        window.alert('HAND 2 WINS!');
+                    } else {
+                        window.alert('HAND 1 WINS!');
+                    }
+                    break;
+                case (hand1 == 'p'):
+                    if (hand2 == 'r') {
+                        window.alert('HAND 1 WINS!');
+                    } else {
+                        window.alert('HAND 2 WINS!');
+                    }
+                    break;
+                default:
+                    if (hand2 == 'r') {
+                        window.alert('HAND 2 WINS!');
+                    } else {
+                        window.alert('HAND 1 WINS!');
+                    }
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
